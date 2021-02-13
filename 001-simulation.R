@@ -17,6 +17,7 @@ remotes::install_github(
   ref = "8c18687c71e9"
 )
 # install the spip binary
+if(!CKMRpop::spip_exists())
 CKMRpop::install_spip(Dir = system.file(package = "CKMRpop"))
 # get tidyverse if it aint there
 if(!("tidyverse" %in% rownames(installed.packages()))) {
