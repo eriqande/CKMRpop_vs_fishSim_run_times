@@ -260,6 +260,21 @@ run_and_time <- function(n, nCores = 1) {
 
 }
 
-#### Now, run those simulation and timing comparisons ####
-tmp <- run_and_time(n = 5000, nCores = 8)
+#### Now, set up a grid of parameters to run and do it ####
+
+sim_conditions <- expand_grid(
+  n = c(500, 1000, 2500, 5000, 10000, 25000),
+  nCores = c(1, 2, 4, 8, 16)
+)
+
+results <- sim_conditions %>%
+  mutate(
+    res = map2(
+      .x = n,
+      .y = nCores,
+      .f = ~ run_and_time(n = .x, nCores = .y)
+    )
+  )
+
+write_rds(results, file = "sim_results.rds")
 
