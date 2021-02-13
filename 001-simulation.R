@@ -1,3 +1,7 @@
+#### Get the command line arg to Rscript to set the cores ####
+args = commandArgs(trailingOnly=TRUE)
+useCores = as.integer(args[1])
+
 #### Get the necessary packages ####
 
 if(!("remotes" %in% rownames(installed.packages()))) {
@@ -264,7 +268,7 @@ run_and_time <- function(n, nCores = 1) {
 
 sim_conditions <- expand_grid(
   n = c(500, 1000, 2500, 5000, 10000, 25000),
-  nCores = c(1, 2, 4, 8, 16)
+  nCores = useCores
 )
 
 results <- sim_conditions %>%
@@ -276,5 +280,5 @@ results <- sim_conditions %>%
     )
   )
 
-write_rds(results, file = "sim_results.rds")
+write_rds(results, file = paste0("sim_results_cores_", useCores, ".rds"))
 
