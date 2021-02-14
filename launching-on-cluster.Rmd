@@ -1,0 +1,24 @@
+---
+title: "Launching jobs on the cluster"
+output: html_notebook
+---
+
+
+This is what I did to launch the different runs on some cluster cores/nodes.
+
+I did it on the cluster, because fishSim takes quite on some conditions.
+
+I will first get a whole node and use all 20 cores, just to see where we are at.
+
+```sh
+# get the repo:
+cd Documents/git-repos/
+git clone git@github.com:eriqande/CKMRpop_vs_fishSim_run_times.git
+cd CKMRpop_vs_fishSim_run_times
+
+# get twenty cores and all the memory from them
+srun -c 20 --mem=90G --pty /bin/bash
+module load R
+Rscript --vanilla 001-simulation.R 20 > cores20.out 2> cores20.err
+
+```
