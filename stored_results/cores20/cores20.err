@@ -1,0 +1,41 @@
+Skipping install of 'fishSim' from a github remote, the SHA1 (12c85524) has not changed since last install.
+  Use `force = TRUE` to force installation
+Skipping install of 'CKMRpop' from a github remote, the SHA1 (8c18687c) has not changed since last install.
+  Use `force = TRUE` to force installation
+trying URL 'https://github.com/eriqande/spip/raw/master/spip-Linux'
+Content type 'application/octet-stream' length 239096 bytes (233 KB)
+==================================================
+downloaded 233 KB
+
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+✔ ggplot2 3.3.3     ✔ purrr   0.3.4
+✔ tibble  3.0.6     ✔ dplyr   1.0.4
+✔ tidyr   1.1.2     ✔ stringr 1.4.0
+✔ readr   1.4.0     ✔ forcats 0.5.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+Running spip in directory /tmp/RtmpWfufUs/fileeb9af15855fd6
+Done running spip. Output file size is 4.94931 Mb
+Processing output file with awk
+Done processing output into spip_pedigree.tsv, spip_prekill_census.tsv, and spip_samples.tsv
+Running spip in directory /tmp/RtmpWfufUs/fileeb9af4b3ce2ba
+Done running spip. Output file size is 9.335915 Mb
+Processing output file with awk
+Done processing output into spip_pedigree.tsv, spip_prekill_census.tsv, and spip_samples.tsv
+Running spip in directory /tmp/RtmpWfufUs/fileeb9af6ae67295
+Done running spip. Output file size is 22.586465 Mb
+Processing output file with awk
+Done processing output into spip_pedigree.tsv, spip_prekill_census.tsv, and spip_samples.tsv
+Running spip in directory /tmp/RtmpWfufUs/fileeb9af158e497
+Done running spip. Output file size is 44.985096 Mb
+Processing output file with awk
+Done processing output into spip_pedigree.tsv, spip_prekill_census.tsv, and spip_samples.tsv
+Running spip in directory /tmp/RtmpWfufUs/fileeb9af5d6fb2e2
+Done running spip. Output file size is 90.449728 Mb
+Processing output file with awk
+Done processing output into spip_pedigree.tsv, spip_prekill_census.tsv, and spip_samples.tsv
+Running spip in directory /tmp/RtmpWfufUs/fileeb9af38a4a776
+Done running spip. Output file size is 226.280743 Mb
+Processing output file with awk
+Done processing output into spip_pedigree.tsv, spip_prekill_census.tsv, and spip_samples.tsv
