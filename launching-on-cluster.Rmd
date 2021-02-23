@@ -23,6 +23,14 @@ Rscript --vanilla 001-simulation.R 20 > cores20.out 2> cores20.err
 
 ```
 
-And, to do the 003 run, with quickin, I will run it and use 18 cores.
+And, to do the 003 run, with quickin, I will run it and use 16 cores.
 I don't think anything is multithreaded, so that is mostly just
-to have the memory.  
+to have the memory (and the output will be in a directory called
+cores16.)
+
+```sh
+# get twenty cores and all the memory from them
+srun -c 16 --mem=74G --pty /bin/bash
+module load R
+Rscript --vanilla 003-record-times-using-quickin.R 16 > cores16.out 2> cores16.err
+```
