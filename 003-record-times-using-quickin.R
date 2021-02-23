@@ -271,7 +271,7 @@ run_and_time <- function(n, nCores = 1) {
 #### Now, set up a grid of parameters to run and do it ####
 
 sim_conditions <- expand_grid(
-  n = c(500, 1000, 2500, 5000, 10000, 25000),
+  n = c(500, 1000, 2500, 5000, 10000, 25000, 50000, 100000),
   nCores = useCores
 )
 

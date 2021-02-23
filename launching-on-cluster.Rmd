@@ -22,3 +22,7 @@ module load R
 Rscript --vanilla 001-simulation.R 20 > cores20.out 2> cores20.err
 
 ```
+
+And, to do the 003 run, with quickin, I will run it and use 18 cores.
+I don't think anything is multithreaded, so that is mostly just
+to have the memory.  
