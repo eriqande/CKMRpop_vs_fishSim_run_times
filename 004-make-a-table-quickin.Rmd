@@ -1,0 +1,61 @@
+---
+title: "Make a table for the quickin case"
+output: html_notebook
+---
+
+It takes a really long time to run those fishSim pops, so I am
+just going to report this single rep of them
+```{r}
+library(tidyverse)
+
+# read the data and unnest it
+dat <- read_rds("stored_results/cores16/sim_results_cores_16.rds") %>%
+  unnest(cols = c(res))
+```
+
+Now we extract the elapsed time in seconds.  Since we are comparing multicore fishSim to
+single-core spip, I think this is the best comparison.
+```{r}
+dat2 <- dat %>%
+  mutate(
+    spip_elapsed_sim_time = map_dbl(spip_sim_time, 3),
+    fishSim_elapsed_sim_time = map_dbl(fishSim_sim_time, 3),
+    spip_elapsed_pair_time = map_dbl(spip_pair_time, 3),
+    fishSim_elapsed_pair_time = map_dbl(fishSim_pair_time, 3),
+  )
+```
+
+Now, let's get the columns in the order that we want them, and also
+round all the times to the nearest tenth
+```{r}
+dat3 <- dat2 %>%
+  select(
+    N,
+    spip_size,
+    fish_sim_size,
+    contains("elapsed_sim"),
+    spip_sample_size,
+    fish_sim_sample_size,
+    contains("elapsed_pair")
+  ) %>%
+  mutate(
+    across(
+      .cols = contains("time"),
+      .fns = round,
+      digits = 1
+    )
+  )
+```
+
+
+
+That is good enought to write into LaTeX and format as a table.
+```{r}
+dir.create("outputs/004", recursive = TRUE, showWarnings = FALSE)
+write_delim(
+  dat3,
+  delim = "&",
+  eol = "\\tabularnewline\n",
+  file = "outputs/004/sim-table.tex"
+)
+```
