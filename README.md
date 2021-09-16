@@ -1,6 +1,8 @@
 README
 ================
 
+[![DOI](https://zenodo.org/badge/338614949.svg)](https://zenodo.org/badge/latestdoi/338614949)
+
 This repository used code for run-timing comparisons between two R
 packages, CKMRpop and FishSim, that are presented in the paper “CKMRpop:
 Forward-in-time simulation and tabulation of pairwise kin relationships
